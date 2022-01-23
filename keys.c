@@ -1,8 +1,8 @@
 #include "fractol.h"
 
-static void arrow_keys(int keycode, t_params *params)
+static void	arrow_keys(int keycode, t_params *params)
 {
-	t_complex   delta;
+	t_complex	delta;
 
 	delta.re = (params->max.re - params->min.re) / 100;
 	delta.im = (params->max.im - params->min.im) / 100;
@@ -28,10 +28,10 @@ static void arrow_keys(int keycode, t_params *params)
 	}
 }
 
-int press_key(int keycode, t_params *params)
+int	press_key(int keycode, t_params *params)
 {
 	if (keycode == ARROW_DOWN || keycode == ARROW_UP
-	|| keycode == ARROW_RIGHT || keycode == ARROW_LEFT)
+		|| keycode == ARROW_RIGHT || keycode == ARROW_LEFT)
 		arrow_keys(keycode, params);
 	else if (keycode == MAIN_PAD_C)
 		params->color_shift++;

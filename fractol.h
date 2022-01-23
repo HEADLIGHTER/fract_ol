@@ -24,60 +24,60 @@
 
 typedef struct s_data
 {
-	void    *mlx;
-	void    *img;
-	void    *win;
-	char    *addr;
-	int     bits_per_pixel;
-	int     line_length;
-	int     endian;
-}   t_data;
+	void	*mlx;
+	void	*img;
+	void	*win;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}	t_data;
 
 typedef struct s_image
 {
-	int     length;
-	int     width;
-}   t_image;
+	int	length;
+	int	width;
+}	t_image;
 
 typedef struct s_complex
 {
-	double  re;
-	double  im;
-}   t_complex;
+	double	re;
+	double	im;
+}	t_complex;
 
 typedef struct s_params
 {
-	int         argc;
-	char        **argv;
-	t_data      mlx_data;
-	t_image     image;
-	int         max_iteration;
-	t_complex   min;
-	t_complex   max;
-	t_complex   julia_k;
-	int         (*formula)(int x, int y, struct s_params *params);
-	int         color_shift;
-}   t_params;
+	int		argc;
+	char	**argv;
+	t_data	mlx_data;
+	t_image	image;
+	int		max_iteration;
+	t_complex			min;
+	t_complex			max;
+	t_complex			julia_k;
+	int		(*formula)(int x, int y, struct s_params *params);
+	int		color_shift;
+}	t_params;
 
 typedef struct s_formula
 {
-	char    *name;
-	int     (*formula)(int x, int y, t_params *params);
-}   t_formula;
+	char	*name;
+	int		(*formula)(int x, int y, t_params *params);
+}	t_formula;
 
 int		init_params(t_params *params, char **argv);
 void	res_params(t_params *params);
 double	ft_double(char *nbr);
 int		check(char *str);
 int		draw_fractal(t_params *params);
-t_color init_color(int iter, t_params *params);
-t_color new_color(int r, int g, int b);
+t_color	init_color(int iter, t_params *params);
+t_color	new_color(int r, int g, int b);
 int		mandelbrot(int x, int y, t_params *params);
 int		burning_ship(int x, in y, t_params *params);
-void    u_tip(void);
-int 	end_p(t_params *params);
-int 	press_key(int keycode, t_params *params);
-int 	pointer_handler(int x, int y, t_params *params);
-int 	scroll_handler(int keycode, int x, int y, t_params *params);
+void	u_tip(void);
+int		end_p(t_params *params);
+int		press_key(int keycode, t_params *params);
+int		pointer_handler(int x, int y, t_params *params);
+int		scroll_handler(int keycode, int x, int y, t_params *params);
 
 #endif

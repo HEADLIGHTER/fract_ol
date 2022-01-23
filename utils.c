@@ -1,8 +1,8 @@
 #include "fractol.h"
 
-int check(char *str)
+int	check(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (*str == '-')
@@ -28,9 +28,9 @@ int check(char *str)
 	return (0);
 }
 
-static double   get_result2(char **nbr)
+static double	get_result2(char **nbr)
 {
-	double  result2;
+	double	result2;
 
 	result2 = 0;
 	while (ft_isdigit(**nbr))
@@ -44,9 +44,9 @@ static double   get_result2(char **nbr)
 	return (result2);
 }
 
-static double   get_result1(char **nbr)
+static double	get_result1(char **nbr)
 {
-	double  result1;
+	double	result1;
 
 	result1 = 0;
 	while (ft_isdigit(**nbr))
@@ -57,13 +57,12 @@ static double   get_result1(char **nbr)
 	return (result1);
 }
 
-
-double  ft_double(char *nbr)
+double	ft_double(char *nbr)
 {
-	double  result1;
-	double  result2;
-	int     neg;
-	double  res;
+	double	result1;
+	double	result2;
+	int		neg;
+	double	res;
 
 	if (nbr == NULL)
 		return (0);

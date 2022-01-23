@@ -93,7 +93,7 @@ int	init_params(t_params *params, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_params params;
+	t_params	params;
 
 	params.argc = argc;
 	if (argc != 2 && argc != 4)
