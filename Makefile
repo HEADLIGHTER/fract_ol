@@ -18,7 +18,7 @@ all:
 	@$(MAKE) -C $(LIBPATH)
 	@$(MAKE) $(NAME)
 $(NAME): $(OBJ_NAME) $(HEADER) $(LIBFT) Makefile
-	@$(CC) $(FLAGS) $(LIBFT) $(MLX) $(OBJ_NAME) -o $(NAME)
+	@$(CC) $(CC_F) $(LIBFT) $(MLX) $(OBJ_NAME) -o $(NAME)
 
 bonus: all
 

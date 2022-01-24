@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractals.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bbellatr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/24 16:56:05 by bbellatr          #+#    #+#             */
+/*   Updated: 2022/01/24 16:56:07 by bbellatr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 //Zn+1 = Zn2 + c, where z0 = c
@@ -8,7 +20,7 @@ int	mandelbrot(int x, int y, t_params *params)
 	int			i;
 	double		tmp;
 
-	void (params);
+	(void)params;
 	point.re = params->min.re + x * ((params->max.re - params->min.re)
 			/ (params->image.width));
 	point.im = params->max.im - y * ((params->max.im - params->min.im)
@@ -18,7 +30,7 @@ int	mandelbrot(int x, int y, t_params *params)
 	while (z.re * z.re + z.im * z.im < 4 && i < params->max_iteration)
 	{
 		tmp = z.re;
-		z.re = z.re * z.re - z.im * z.im + point;
+		z.re = z.re * z.re - z.im * z.im + point.re;
 		z.im = 2 * z.im * tmp + point.im;
 		i++;
 	}
@@ -26,14 +38,14 @@ int	mandelbrot(int x, int y, t_params *params)
 }
 
 //Zn+1 = (Z.REn + i * Z.IMn)@ + c, where Z0 = c;
-int	burning_ship(int x, in y, t_params *params)
+int	burning_ship(int x, int y, t_params *params)
 {
 	t_complex	point;
 	t_complex	z;
 	int			i;
 	double		tmp;
 
-	void (params);
+	(void)params;
 	point.re = params->min.re + x * ((params->max.re - params->min.re)
 			/ (params->image.width));
 	point.im = params->max.im - y * ((params->max.im - params->min.im)

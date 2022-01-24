@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bbellatr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/24 16:55:27 by bbellatr          #+#    #+#             */
+/*   Updated: 2022/01/24 16:55:33 by bbellatr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 static int	clamp(int color, int min, int max)
@@ -54,10 +66,10 @@ static void	put_pixel(t_data *data, int x, int y, int color)
 
 int	draw_fractal(t_params *params)
 {
-	int	x;
-	int	y;
-	int	iters;
-	t_color		color;
+	int		x;
+	int		y;
+	int		iters;
+	t_color	color;
 
 	x = 0;
 	while (x < params->image.width)

@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bbellatr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/24 16:56:35 by bbellatr          #+#    #+#             */
+/*   Updated: 2022/01/24 16:56:37 by bbellatr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
 # include "libft/libft.h"
-# include "mlx.h"
+# include <mlx.h>
 # include <math.h>
 # include <stdio.h>
 
@@ -21,6 +32,17 @@
 # define MOTION_NOTIFY          06
 # define KEY_PRESS              02
 # define DESTROY_NOTIFY         17
+
+typedef union u_color
+{
+	unsigned int	color;
+	struct s_rgb
+	{
+		unsigned int	b : 8;
+		unsigned int	g : 8;
+		unsigned int	r : 8;
+	}	t_rgb;
+}	t_color;
 
 typedef struct s_data
 {
@@ -47,16 +69,15 @@ typedef struct s_complex
 
 typedef struct s_params
 {
-	int		argc;
-	char	**argv;
-	t_data	mlx_data;
-	t_image	image;
-	int		max_iteration;
-	t_complex			min;
-	t_complex			max;
-	t_complex			julia_k;
-	int		(*formula)(int x, int y, struct s_params *params);
-	int		color_shift;
+	int			argc;
+	char		**argv;
+	t_data		mlx_data;
+	t_image		image;
+	int			max_iteration;
+	t_complex	min;
+	t_complex	max;
+	int			(*formula)(int x, int y, struct s_params *params);
+	int			color_shift;
 }	t_params;
 
 typedef struct s_formula
@@ -73,7 +94,7 @@ int		draw_fractal(t_params *params);
 t_color	init_color(int iter, t_params *params);
 t_color	new_color(int r, int g, int b);
 int		mandelbrot(int x, int y, t_params *params);
-int		burning_ship(int x, in y, t_params *params);
+int		burning_ship(int x, int y, t_params *params);
 void	u_tip(void);
 int		end_p(t_params *params);
 int		press_key(int keycode, t_params *params);

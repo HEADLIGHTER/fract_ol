@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bbellatr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/24 16:56:19 by bbellatr          #+#    #+#             */
+/*   Updated: 2022/01/24 16:56:22 by bbellatr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 void	res_params(t_params *params)
@@ -5,16 +17,6 @@ void	res_params(t_params *params)
 	params->image.length = WIN_HEIGHT;
 	params->image.width = WIN_WIDTH;
 	params->max_iteration = 100;
-	if (params->argc == 4)
-	{
-		params->julia_k.re = ft_double(params->argv[2]);
-		params->julia_k.im = ft_double(params->argv[3]);
-	}
-	else
-	{
-		params->julia_k.re = -0.4;
-		params->julia_k.im = 0.6;
-	}
 	params->min.im = -2;
 	params->min.re = -2;
 	params->max.im = 2;
@@ -30,10 +32,8 @@ static int	(*get_formula(char *name)) (int x, int y, t_params *params)
 
 	formulas[0].name = "mandelbrot";
 	formulas[0].formula = &mandelbrot;
-	formulas[1].name = "julia";
-	formulas[1].formula = &julia;
-	formulas[2].name = "burning_Ship";
-	formulas[2].formula = &burning_ship;
+	formulas[1].name = "burning_ship";
+	formulas[1].formula = &burning_ship;
 	i = 0;
 	formula = NULL;
 	while (i < (sizeof(formulas) / sizeof(t_formula)))
@@ -63,9 +63,7 @@ void	init_image(t_params *params)
 	mlx_hook(params->mlx_data.win, KEY_PRESS,
 		1L << 0, press_key, params);
 	mlx_hook(params->mlx_data.win, DESTROY_NOTIFY,
-		1L << 17, end_program, params);
-	mlx_hook(params->mlx_data.win, MOTION_NOTIFY,
-		1L << 6, pointer_handler, params);
+		1L << 17, end_p, params);
 	mlx_loop(params->mlx_data.mlx);
 }
 
@@ -78,14 +76,6 @@ int	init_params(t_params *params, char **argv)
 	params->formula = get_formula(argv[1]);
 	if (params->formula == NULL)
 		return (0);
-	if (params->argc == 4)
-	{
-		params->julia_k.re = ft_double(params->argv[2]);
-		params->julia_k.im = ft_double(params->argv[3]);
-		if (params->julia_k.im > 1.0 || params->julia_k.im < -1.0
-			|| params->julia_k.re > 1.0 || params->julia_k.re < -1.0)
-			return (0);
-	}
 	res_params(params);
 	params->mlx_data.mlx = mlx_init();
 	return (1);
@@ -101,7 +91,7 @@ int	main(int argc, char **argv)
 		u_tip();
 		exit(EXIT_FAILURE);
 	}
-	if (atgc == 4)
+	if (argc == 4)
 	{
 		if (!check(argv[2]) || !check(argv[3]))
 		{

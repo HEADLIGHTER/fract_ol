@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bbellatr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/24 16:57:06 by bbellatr          #+#    #+#             */
+/*   Updated: 2022/01/24 16:57:11 by bbellatr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 int	check(char *str)
@@ -77,7 +89,7 @@ double	ft_double(char *nbr)
 	if (*nbr == '.')
 	{
 		nbr++;
-		result_part2 = get_result2()(&nbr);
+		result2 = get_result2(&nbr);
 	}
 	res = result1 + result2;
 	if (neg)
