@@ -28,7 +28,7 @@ static int	(*get_formula(char *name)) (int x, int y, t_params *params)
 {
 	size_t				i;
 	int					(*formula)(int x, int y, t_params *vars);
-	static t_formula	formulas[3];
+	static t_formula	formulas[2];
 
 	formulas[0].name = "mandelbrot";
 	formulas[0].formula = &mandelbrot;

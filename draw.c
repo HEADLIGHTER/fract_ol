@@ -31,14 +31,14 @@ t_color	new_color(int r, int g, int b)
 	return (color);
 }
 
-t_color	init_color(int iter, t_params *params)
+t_color	init_color(int iters, t_params *params)
 {
 	t_color	color;
 	double	t;
 
-	t = (double)iter / params->max_iteration;
+	t = (double)iters / params->max_iteration;
 	color = new_color(0, 0, 0);
-	if (!(iter == 0 || (iter == params->max_iteration)))
+	if (!(iters == 0 || (iters == params->max_iteration)))
 	{
 		if (params->color_shift % 3 == 1)
 			color = new_color((int)(8.5 * pow((1 - t), 3) * t * 255),

@@ -12,29 +12,29 @@
 
 #include "fractol.h"
 
-static double	interpolate(double start, double end, double interpolation)
+static double	interpolate(double start, double end, double interpol)
 {
-	return (start + ((end - start) * interpolation));
+	return (start + ((end - start) * interpol));
 }
 
 static void	zoom_screen(int keycode, int x, int y, t_params *params)
 {
 	t_complex	delta;
-	double		interpolation;
+	double		interpol;
 
 	delta.re = (double)x / (params->image.width / (params->max.re
 				- params->min.re)) + params->min.re;
 	delta.im = (double)y / (params->image.length / (params->max.im
 				- params->min.im)) * -1 + params->max.im;
-	interpolation = 1;
+	interpol = 1;
 	if (keycode == MOUSE_SCROLL_DOWN)
-		interpolation = 1.05;
+		interpol = 1.05;
 	else if (keycode == MOUSE_SCROLL_UP)
-		interpolation = 0.95;
-	params->min.re = interpolate(delta.re, params->min.re, interpolation);
-	params->min.im = interpolate(delta.im, params->min.im, interpolation);
-	params->max.re = interpolate(delta.re, params->max.re, interpolation);
-	params->max.im = interpolate(delta.im, params->max.im, interpolation);
+		interpol = 0.95;
+	params->min.re = interpolate(delta.re, params->min.re, interpol);
+	params->min.im = interpolate(delta.im, params->min.im, interpol);
+	params->max.re = interpolate(delta.re, params->max.re, interpol);
+	params->max.im = interpolate(delta.im, params->max.im, interpol);
 }
 
 int	scroll_handler(int keycode, int x, int y, t_params *params)
