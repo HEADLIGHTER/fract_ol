@@ -45,3 +45,16 @@ int	scroll_handler(int keycode, int x, int y, t_params *params)
 		zoom_screen(keycode, x, y, params);
 	return (0);
 }
+
+int pointer_handler(int x, int y, t_params *params)
+{
+	if (params->formula == &julia
+	&& x >= 0 && x < WIN_WIDTH && y >= 0 && y < WIN_HEIGHT)
+	{
+		params->julia_k.re = ((double)x - (double)params->image.width / 2)
+			/ ((double)params->image.width / 2);
+		params->julia_k.im = ((double)y - (double)params->image.length / 2)
+			/ ((double)params->image.length / 2);
+	}
+	return (0);
+}

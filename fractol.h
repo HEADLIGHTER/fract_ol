@@ -76,6 +76,7 @@ typedef struct s_params
 	int			max_iteration;
 	t_complex	min;
 	t_complex	max;
+	t_complex   julia_k;
 	int			(*formula)(int x, int y, struct s_params *params);
 	int			color_shift;
 }	t_params;
@@ -94,6 +95,7 @@ int		draw_fractal(t_params *params);
 t_color	init_color(int iter, t_params *params);
 t_color	new_color(int r, int g, int b);
 int		mandelbrot(int x, int y, t_params *params);
+int		julia(int x, int y, t_params *params);
 int		burning_ship(int x, int y, t_params *params);
 void	u_tip(void);
 int		end_p(t_params *params);

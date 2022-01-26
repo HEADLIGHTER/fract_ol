@@ -37,6 +37,32 @@ int	mandelbrot(int x, int y, t_params *params)
 	return (i);
 }
 
+//Zn+1 = Zn2 + k, where z0 = k;
+//Default k.re = -0.4, k.im = 0.6
+int julia(int x, int y, t_params *params)
+{
+	t_complex   point;
+	t_complex   z;
+	int         i;
+	double      tmp;
+
+	(void)params;
+	point.re = params->min.re + x * ((params->max.re - params->min.re)
+		/ (params->image.width));
+	point.im = params->max.im - y * ((params->max.im - params->min.im)
+		/ (params->image.length));
+	z = point;
+	i = 0;
+	while (z.re * z.re + z.im * z.im <= 4 && i < params->max_iteration)
+	{
+		tmp = z.re;
+		z.re = z.re * z.re - z.im * z.im + params->julia_k.re;
+		z.im = 2 * z.im * tmp + params->julia_k.im;
+		i++;
+	}
+	return (i);
+}
+
 //Zn+1 = (Z.REn + i * Z.IMn)@ + c, where Z0 = c;
 int	burning_ship(int x, int y, t_params *params)
 {
@@ -60,11 +86,6 @@ int	burning_ship(int x, int y, t_params *params)
 		i++;
 	}
 	return (i);
-}
-
-void	u_tip(void)
-{
-	printf("");
 }
 
 int	end_p(t_params *params)

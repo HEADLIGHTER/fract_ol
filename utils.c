@@ -96,3 +96,8 @@ double	ft_double(char *nbr)
 		res *= -1;
 	return (res);
 }
+
+void	u_tip(void)
+{
+	printf("");
+}
