@@ -99,5 +99,11 @@ double	ft_double(char *nbr)
 
 void	u_tip(void)
 {
-	printf("");
+	printf("%s\n%s\n%s\n%s\n%s\n", "Fractals: mandelbrot, julia, burning_ship",
+		"Usage:", "Arrows to look around", "Mouse wheel for zoom",
+		"Space for color shift and ESC for exit");
+	printf("----------------------------------------------------------\n");
+	printf("%s\n%s\n", "./fractol julia <double> <double> (min -1 max 1)",
+		"to change Julia k1 and k2 parameters (-0.6 0.5 by default)");
+	printf("----------------------------------------------------------\n");
 }

@@ -24,8 +24,8 @@ void	res_params(t_params *params)
 	}
 	else
 	{
-		params->julia_k.re = -0.4;
-		params->julia_k.im = 0.6;
+		params->julia_k.re = -0.6;
+		params->julia_k.im = 0.5;
 	}
 	params->min.im = -2;
 	params->min.re = -2;
@@ -95,7 +95,7 @@ int	init_params(t_params *params, char **argv)
 		params->julia_k.re = ft_double(params->argv[2]);
 		params->julia_k.im = ft_double(params->argv[3]);
 		if (params->julia_k.im > 1.0 || params->julia_k.im < -1.0
-		 || params->julia_k.re > 1.0 || params->julia_k.re < -1.0)
+			|| params->julia_k.re > 1.0 || params->julia_k.re < -1.0)
 			return (0);
 	}
 	res_params(params);

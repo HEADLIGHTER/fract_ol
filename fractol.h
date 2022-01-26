@@ -18,8 +18,8 @@
 # include <math.h>
 # include <stdio.h>
 
-# define WIN_HEIGHT             800
-# define WIN_WIDTH              800
+# define WIN_HEIGHT             600
+# define WIN_WIDTH              600
 # define MOUSE_SCROLL_UP        4
 # define MOUSE_SCROLL_DOWN      5
 # define ARROW_UP               126
@@ -27,7 +27,7 @@
 # define ARROW_LEFT             123
 # define ARROW_RIGHT            124
 # define MAIN_PAD_ESC           53
-# define MAIN_PAD_C             8
+# define MAIN_PAD_C             49
 # define BUTTON_PRESS           04
 # define MOTION_NOTIFY          06
 # define KEY_PRESS              02
@@ -76,7 +76,7 @@ typedef struct s_params
 	int			max_iteration;
 	t_complex	min;
 	t_complex	max;
-	t_complex   julia_k;
+	t_complex	julia_k;
 	int			(*formula)(int x, int y, struct s_params *params);
 	int			color_shift;
 }	t_params;

@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: bbellatr <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/01/26 15:59:53 by bbellatr          #+#    #+#              #
+#    Updated: 2022/01/26 15:59:57 by bbellatr         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = fractol
 MAIN = fractol.c
 HEADER = fractol.h
@@ -9,7 +21,7 @@ MLX = -lmlx -framework OpenGL -framework Appkit
 LIBFT = libft/libft.a
 LIBPATH = libft/
 
-SRCS = fractol.c, fractals.c, mouse.c, keys.c, utils.c, draw.c
+SRCS = fractol.c fractals.c mouse.c keys.c utils.c draw.c
 
 OBJ_NAME = $(SRCS:.c=.o)
 OBJ_BONUS_NAME = $(SRCS:.c=.o)

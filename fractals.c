@@ -39,18 +39,18 @@ int	mandelbrot(int x, int y, t_params *params)
 
 //Zn+1 = Zn2 + k, where z0 = k;
 //Default k.re = -0.4, k.im = 0.6
-int julia(int x, int y, t_params *params)
+int	julia(int x, int y, t_params *params)
 {
-	t_complex   point;
-	t_complex   z;
-	int         i;
-	double      tmp;
+	t_complex	point;
+	t_complex	z;
+	int			i;
+	double		tmp;
 
 	(void)params;
 	point.re = params->min.re + x * ((params->max.re - params->min.re)
-		/ (params->image.width));
+			/ (params->image.width));
 	point.im = params->max.im - y * ((params->max.im - params->min.im)
-		/ (params->image.length));
+			/ (params->image.length));
 	z = point;
 	i = 0;
 	while (z.re * z.re + z.im * z.im <= 4 && i < params->max_iteration)
