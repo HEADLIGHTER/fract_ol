@@ -18,20 +18,20 @@
 # include <math.h>
 # include <stdio.h>
 
-# define WIN_HEIGHT             600
-# define WIN_WIDTH              600
-# define MOUSE_SCROLL_UP        4
-# define MOUSE_SCROLL_DOWN      5
-# define ARROW_UP               126
-# define ARROW_DOWN             125
-# define ARROW_LEFT             123
-# define ARROW_RIGHT            124
-# define MAIN_PAD_ESC           53
-# define MAIN_PAD_C             49
-# define BUTTON_PRESS           04
-# define MOTION_NOTIFY          06
-# define KEY_PRESS              02
-# define DESTROY_NOTIFY         17
+# define WIN_HEIGHT				600
+# define WIN_WIDTH				600
+# define MOUSE_SCROLL_UP		4
+# define MOUSE_SCROLL_DOWN		5
+# define ARROW_UP				126
+# define ARROW_DOWN				125
+# define ARROW_LEFT				123
+# define ARROW_RIGHT			124
+# define MAIN_PAD_ESC			53
+# define MAIN_PAD_SPACE			49
+# define BUTTON_PRESS			04
+# define MOTION_NOTIFY			06
+# define KEY_PRESS				02
+# define DESTROY_NOTIFY			17
 
 typedef union u_color
 {

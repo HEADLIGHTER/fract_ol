@@ -38,7 +38,7 @@ int	mandelbrot(int x, int y, t_params *params)
 }
 
 //Zn+1 = Zn2 + k, where z0 = k;
-//Default k.re = -0.4, k.im = 0.6
+//Default k.re = -0.8, k.im = 0.0
 int	julia(int x, int y, t_params *params)
 {
 	t_complex	point;

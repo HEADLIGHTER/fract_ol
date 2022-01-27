@@ -24,8 +24,8 @@ void	res_params(t_params *params)
 	}
 	else
 	{
-		params->julia_k.re = -0.6;
-		params->julia_k.im = 0.5;
+		params->julia_k.re = -0.8;
+		params->julia_k.im = 0.0;
 	}
 	params->min.im = -2;
 	params->min.re = -2;

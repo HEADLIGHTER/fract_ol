@@ -104,6 +104,6 @@ void	u_tip(void)
 		"Space for color shift and ESC for exit");
 	printf("----------------------------------------------------------\n");
 	printf("%s\n%s\n", "./fractol julia <double> <double> (min -1 max 1)",
-		"to change Julia k1 and k2 parameters (-0.6 0.5 by default)");
+		"to change Julia k1 and k2 parameters (-0.8 0.0 by default)");
 	printf("----------------------------------------------------------\n");
 }

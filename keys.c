@@ -45,7 +45,7 @@ int	press_key(int keycode, t_params *params)
 	if (keycode == ARROW_DOWN || keycode == ARROW_UP
 		|| keycode == ARROW_RIGHT || keycode == ARROW_LEFT)
 		arrow_keys(keycode, params);
-	else if (keycode == MAIN_PAD_C)
+	else if (keycode == MAIN_PAD_SPACE)
 		params->color_shift++;
 	else if (keycode == MAIN_PAD_ESC)
 		end_p(params);
